@@ -1,4 +1,8 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  
+mat-nav-list {
+  width: 200px;
+
+}
+
+mat-sidenav-content {
+  height: 85vh;
+}
