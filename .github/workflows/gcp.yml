@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: gcp-prod
     env:
-      image_name: gcr.io/${{ secrets.GCP_PROJECT_ID }}/site:latest
+      image_name: gcr.io/${{ secrets.GCP_PROJECT_ID }}/agenda-visitas:latest
     steps:
       # Git checkout
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
 
       # build image
       - name: Build Docker image
-        run: docker build  
+        run: docker build . -t $image_name .
 
       # push image to registry
       - name: Push Docker image
