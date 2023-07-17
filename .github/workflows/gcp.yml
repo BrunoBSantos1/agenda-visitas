@@ -30,7 +30,7 @@ jobs:
 
       # build image
       - name: Build Docker image
-        run: docker build  --tag IMAGE_NAME:$(date +%s)
+        run: docker build  -t IMAGE_NAME:$(date +%s)
 
       # push image to registry
       - name: Push Docker image
