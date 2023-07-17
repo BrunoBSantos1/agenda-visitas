@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: gcp-prod
     env:
-      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/visitas:latest
+      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/cadastro-visitas:latest
     steps:
       # Git checkout
       - name: Checkout
