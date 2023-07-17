@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: gcp-prod
     env:
-      image_name: gcr.io/${{ secrets.GCP_PROJECT_ID }}/agenda-visitas:latest
+      image_name: ${{ secrets.GCP_PROJECT_ID }}/agenda-visitas:latest
     steps:
       # Git checkout
       - name: Checkout
