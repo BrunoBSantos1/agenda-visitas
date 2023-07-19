@@ -16,11 +16,11 @@
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="opened">
         <mat-nav-list>
-            <a mat-list-item routerLink="">Home</a>
-            <a mat-list-item routerLink="/create">Nova visita</a>
-            <a mat-list-item>Teste</a>
-            <a mat-list-item>Teste</a>
-            <a mat-list-item>Teste</a>
+            <a (click)="opened=!opened" mat-list-item routerLink="">Home</a>
+            <a (click)="opened=!opened" mat-list-item routerLink="/create">Nova visita</a>
+            <a (click)="opened=!opened" mat-list-item routerLink="/read">Litas de visitas</a>
+            <a (click)="opened=!opened" mat-list-item>Teste</a>
+            <a (click)="opened=!opened" mat-list-item>Teste</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

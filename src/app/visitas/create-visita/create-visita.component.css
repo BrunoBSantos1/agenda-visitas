@@ -1,33 +1,29 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    padding-top: 20px;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-top: 20px;
+}
 
-  form {
-    border-radius: 50px;
-  }
+.example-full-width {
+  width: 100%;
+}
 
-  button {
-    width: 100%;
-    margin-top: 50px;
-  }
+form {
+  border-radius: 50px;
+}
 
-  .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+button {
+  width: 100%;
+  margin-top: 30px;
+}
 
-  mat-toolbar {
-    max-width: 500px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
-
-  
-  
+mat-toolbar {
+  max-width: 500px;
+}
