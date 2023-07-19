@@ -1,0 +1,33 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding-top: 20px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  form {
+    border-radius: 50px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  mat-toolbar {
+    max-width: 500px;
+  }
+
+
+  
+  
