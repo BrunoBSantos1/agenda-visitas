@@ -13,6 +13,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { VisitasRoutingModule } from './visitas/visitas-routing.module';
+import { VisitasModule } from './visitas/visitas.module';
+
+
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+
+const configFirebase = environment.firebaseConfig
+
+
 
 @NgModule({
   declarations: [
@@ -22,14 +32,17 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    VisitasRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(configFirebase),
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatCardModule
-  ],
+    MatCardModule,
+    VisitasModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

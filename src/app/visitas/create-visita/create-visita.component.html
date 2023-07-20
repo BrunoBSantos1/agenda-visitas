@@ -1,0 +1,37 @@
+<div class="container">
+    <mat-toolbar>
+        <h1>Registre sua visita</h1>
+    </mat-toolbar>
+    <form [formGroup]="visitForm" (ngSubmit)="onSubmitForm()" class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Ocupação</mat-label>
+            <mat-select formControlName="visitorOccupation">
+                <mat-option>Estudante</mat-option>
+                <mat-option>Professor</mat-option>
+                <mat-option>Pesquisador</mat-option>
+                <mat-option>Estudante</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Objetivo</mat-label>
+            <input matInput formControlName="goalVisit">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Descreva o objetivo</mat-label>
+            <textarea matInput rows="3" formControlName="descriptionVisit"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Acompanhante/Guia da comunidade</mat-label>
+            <mat-select formControlName="tourGuide">
+                <mat-option>Dona Josefa</mat-option>
+                <mat-option>Bruno</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Como foi sua visita?</mat-label>
+            <textarea matInput rows="3" formControlName="feedbackVisit"></textarea>
+        </mat-form-field>
+        <button type="submit" [disabled]="!visitForm.valid" mat-raised-button color="primary">Cadastrar</button>
+    </form>
+
+</div>
