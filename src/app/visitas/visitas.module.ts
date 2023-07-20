@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { VisitasRoutingModule } from './visitas-routing.module';
 import { CreateVisitaComponent } from './create-visita/create-visita.component';
@@ -14,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { ReadVisitasComponent } from './read-visitas/read-visitas.component';
 
+
 @NgModule({
   declarations: [
     CreateVisitaComponent,
@@ -22,6 +24,7 @@ import { ReadVisitasComponent } from './read-visitas/read-visitas.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    HttpClientModule,
     VisitasRoutingModule,
     MatInputModule,
     MatFormFieldModule,
