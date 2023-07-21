@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "visitas-2b8a1"
+  },
+  "targets": {
+    "visitas-2b8a1": {
+      "hosting": {
+        "agenda-visitas": [
+          "visitas-2b8a1"
+        ]
+      }
+    }
+  }
+}
