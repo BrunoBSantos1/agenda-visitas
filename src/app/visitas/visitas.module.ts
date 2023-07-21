@@ -14,12 +14,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 
 import { ReadVisitasComponent } from './read-visitas/read-visitas.component';
+import { UpdateVisitaComponent } from './update-visita/update-visita.component';
 
 
 @NgModule({
   declarations: [
     CreateVisitaComponent,
-    ReadVisitasComponent
+    ReadVisitasComponent,
+    UpdateVisitaComponent
   ],
   imports: [
     CommonModule,

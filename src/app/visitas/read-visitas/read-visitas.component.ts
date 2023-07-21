@@ -21,7 +21,10 @@ export class ReadVisitasComponent implements OnInit {
   allVisit() {
     this.visitaService.readVisita().subscribe(data => {
       this.allVisitas = data
-      console.log(this.allVisitas)
     });
+  }
+
+  updateVisita(data: Visita) {
+    console.log(data)
   }
 }

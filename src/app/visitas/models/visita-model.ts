@@ -1,5 +1,6 @@
 export interface Visita {
-    dateVisit: Date,
+    id?: string,
+    dateVisit: string,
     nameVisitor: string,
     visitorOccupation: string,
     goalVisit: string,
