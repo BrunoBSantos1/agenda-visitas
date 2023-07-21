@@ -3,32 +3,13 @@
         <h1>Todas as suas visitas</h1>
     </mat-toolbar>
 
-    <mat-card class="card">
-        <mat-card-title>Defesa de mestrado</mat-card-title>
+    <mat-card class="card" *ngFor="let visita of allVisitas">
+        <mat-card-title>{{ visita.goalVisit }}</mat-card-title>
         <mat-card-content>
-            <ul>
-                <li>13/05/2023</li>
-                <li>Dona Josefa</li>
-            </ul>
+            <span>Acompanhante: {{ visita.tourGuide}}</span><br>
+            <span>Visitei como: {{ visita.visitorOccupation}}</span>
         </mat-card-content>
     </mat-card>
-    <mat-card class="card">
-        <mat-card-title>Primeira visita para TCC</mat-card-title>
-        <mat-card-content>
-            <ul>
-                <li>13/05/2023</li>
-                <li>Dona Josefa</li>
-            </ul>
-        </mat-card-content>
-    </mat-card>
-    <mat-card class="card">
-        <mat-card-title>Primeira visita para TCC</mat-card-title>
-        <mat-card-content>
-            <ul>
-                <li>13/05/2023</li>
-                <li>Dona Josefa</li>
-            </ul>
-        </mat-card-content>
-    </mat-card>
+    
 </div>
 
