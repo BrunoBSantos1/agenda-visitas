@@ -16,6 +16,18 @@ import {MatCardModule} from '@angular/material/card';
 import { VisitasRoutingModule } from './visitas/visitas-routing.module';
 import { VisitasModule } from './visitas/visitas.module';
 
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+const configFirebase = environment.firebaseConfig
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +38,18 @@ import { VisitasModule } from './visitas/visitas.module';
     AppRoutingModule,
     VisitasRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(configFirebase),
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    VisitasModule
+    VisitasModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
     ],
   providers: [],
   bootstrap: [AppComponent]

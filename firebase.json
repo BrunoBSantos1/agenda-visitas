@@ -1,0 +1,16 @@
+{
+  "database": {
+    "rules": "y"
+  },
+  "firestore": {
+    "rules": "y",
+    "indexes": "y"
+  },
+  "hosting": [
+    {
+      "target": "agenda-visitas",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

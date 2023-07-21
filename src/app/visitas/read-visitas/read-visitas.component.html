@@ -1,0 +1,15 @@
+<div class="container-read">
+    <mat-toolbar class="container-read">
+        <h1>Todas as suas visitas</h1>
+    </mat-toolbar>
+
+    <mat-card class="card" *ngFor="let visita of allVisitas">
+        <mat-card-title>{{ visita.goalVisit }}</mat-card-title>
+        <mat-card-content>
+            <span>Acompanhante: {{ visita.tourGuide}}</span><br>
+            <span>Visitei como: {{ visita.visitorOccupation}}</span>
+        </mat-card-content>
+    </mat-card>
+    
+</div>
+
