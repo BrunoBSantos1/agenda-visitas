@@ -31,10 +31,10 @@ export class CreateVisitaComponent {
     this.visita = {
       dateVisit: new Date(),
       nameVisitor: 'Bruno',
-      visitorOccupation: this.visitForm.value.visitorOccupation,
+      visitorOccupation: 'Estudante',
       goalVisit: this.visitForm.value.goalVisit,
       descriptionVisit: this.visitForm.value.descriptionVisit,
-      tourGuide: this.visitForm.value.tourGuide,
+      tourGuide: 'Dona Josefa',
       feedbackVisit: this.visitForm.value.feedbackVisit
     }
 
@@ -42,10 +42,9 @@ export class CreateVisitaComponent {
     
   }
 
-  conectionDb(data: Visita) {
-    this.visitService.createVisita(data).subscribe(
-      (r) => {console.log(r)}),
-      (error) => {console.log(error)}
+  async conectionDb(data: Visita) {
+    const response = await this.visitService.createVisita(data);
+    console.log(response)
   }
 }
 
