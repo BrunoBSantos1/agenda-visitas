@@ -3,13 +3,17 @@
         <h1>Todas as suas visitas</h1>
     </mat-toolbar>
 
-    <mat-card class="card" *ngFor="let visita of allVisitas">
-        <mat-card-title>{{ visita.goalVisit }}</mat-card-title>
-        <mat-card-content>
-            <span>Acompanhante: {{ visita.tourGuide}}</span><br>
-            <span>Visitei como: {{ visita.visitorOccupation}}</span>
-        </mat-card-content>
-    </mat-card>
-    
+    <a class="card" routerLink="{{visita.id}}" *ngFor="let visita of allVisitas">
+        <mat-card>
+            <mat-card-title><h1>{{ visita.goalVisit }}</h1></mat-card-title>
+            <mat-card-subtitle>
+                <span>{{visita.dateVisit}}</span>
+            </mat-card-subtitle>
+            <mat-card-content>
+                <span>Acompanhante: {{ visita.tourGuide}}</span><br>
+                <span>Visitei como: {{ visita.visitorOccupation}}</span><br>
+            </mat-card-content>
+        </mat-card>
+    </a>
 </div>
 

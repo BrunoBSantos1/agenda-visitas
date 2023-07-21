@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Visita } from '../models/visita-model';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, doc } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })

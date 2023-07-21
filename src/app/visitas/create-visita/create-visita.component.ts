@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
 import { Visita } from '../models/visita-model';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-visita',
@@ -11,8 +12,9 @@ import { Observable } from 'rxjs';
 })
 
 
-export class CreateVisitaComponent {
+export class CreateVisitaComponent implements OnInit{
   visita: Visita
+  dataVisita: string
 
   visitForm = new FormGroup({
     dateVisit: new FormControl(''),
@@ -24,12 +26,17 @@ export class CreateVisitaComponent {
     feedbackVisit: new FormControl('')
   })
 
-  constructor(private visitService: ServiceService) {}
+  constructor(private visitService: ServiceService, private router: Router) {}
+
+  ngOnInit() {
+    this.dataVisita = new Date().toDateString()
+
+  }
 
   onSubmitForm() {
     console.log(this.visitForm.value)
     this.visita = {
-      dateVisit: new Date(),
+      dateVisit: this.dataVisita,
       nameVisitor: 'Bruno',
       visitorOccupation: 'Estudante',
       goalVisit: this.visitForm.value.goalVisit,
@@ -43,8 +50,12 @@ export class CreateVisitaComponent {
   }
 
   async conectionDb(data: Visita) {
-    const response = await this.visitService.createVisita(data);
-    console.log(response)
+    const response = await this.visitService.createVisita(data)
+    
+    if(response.id) {
+      this.router.navigate(['read'])
+    }
+    
   }
 }
 
