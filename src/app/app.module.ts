@@ -26,6 +26,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReadVisitasComponent } from './visitas/read-visitas/read-visitas.component';
 import { CreateVisitaComponent } from './visitas/create-visita/create-visita.component';
+import { StartComponent } from './components/start/start.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 
 const configFirebase = environment.firebaseConfig
 
@@ -36,7 +38,9 @@ const configFirebase = environment.firebaseConfig
     AppComponent,
     HomeComponent,
     ReadVisitasComponent,
-    CreateVisitaComponent
+    CreateVisitaComponent,
+    StartComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
