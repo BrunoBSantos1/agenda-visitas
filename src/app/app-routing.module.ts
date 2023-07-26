@@ -4,11 +4,12 @@ import { HomeComponent } from './layout/home/home.component';
 import { ReadVisitasComponent } from './visitas/read-visitas/read-visitas.component';
 import { CreateVisitaComponent } from './visitas/create-visita/create-visita.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { StartComponent } from './components/start/start.component';
 
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent, 
     children: [
       { path: 'read', component: ReadVisitasComponent},
@@ -17,7 +18,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AuthenticationComponent
+    component: AuthenticationComponent,
+    children: [
+      { path: '', redirectTo: 'start', pathMatch: 'full'},
+      { path: 'start', component: StartComponent}
+    ]
   }
   
 ];
