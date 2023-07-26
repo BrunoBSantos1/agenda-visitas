@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +14,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { VisitasRoutingModule } from './visitas/visitas-routing.module';
-import { VisitasModule } from './visitas/visitas.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -23,6 +24,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { ReadVisitasComponent } from './visitas/read-visitas/read-visitas.component';
+import { CreateVisitaComponent } from './visitas/create-visita/create-visita.component';
 
 const configFirebase = environment.firebaseConfig
 
@@ -31,12 +34,14 @@ const configFirebase = environment.firebaseConfig
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ReadVisitasComponent,
+    CreateVisitaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VisitasRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(configFirebase),
     MatToolbarModule,
@@ -45,7 +50,8 @@ const configFirebase = environment.firebaseConfig
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    VisitasModule,
+    MatFormFieldModule,
+    MatSelectModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
 import { Visita } from '../models/visita-model';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({

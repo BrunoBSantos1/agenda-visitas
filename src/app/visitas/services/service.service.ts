@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Visita } from '../models/visita-model';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -11,7 +10,6 @@ export class ServiceService {
   urlBase = collection(this.firestore, 'visitas');
 
   constructor(
-    private http: HttpClient,
     private firestore: Firestore
     ) { }
 
