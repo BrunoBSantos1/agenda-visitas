@@ -1,1 +1,31 @@
-<mat-toolbar>Ola Diego</mat-toolbar>
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="header">
+        <div>
+            <button mat-icon-button (click)="opened=!opened">
+                <mat-icon >menu</mat-icon>
+            </button>
+              <span>Registre sua visita</span>
+        </div>
+        <div>
+            <button routerLink="create" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+                <mat-icon>add</mat-icon>
+              </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened">
+        <mat-nav-list>
+            <a (click)="opened=!opened" mat-list-item routerLink="">Home</a>
+            <a (click)="opened=!opened" mat-list-item routerLink="/create">Nova visita</a>
+            <a (click)="opened=!opened" mat-list-item routerLink="/read">Litas de visitas</a>
+            <a (click)="opened=!opened" mat-list-item>Teste</a>
+            <a (click)="opened=!opened" mat-list-item>Teste</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>  
