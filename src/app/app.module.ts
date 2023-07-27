@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -28,6 +29,7 @@ import { ReadVisitasComponent } from './visitas/read-visitas/read-visitas.compon
 import { CreateVisitaComponent } from './visitas/create-visita/create-visita.component';
 import { StartComponent } from './components/start/start.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { LoginComponent } from './components/login/login.component';
 
 const configFirebase = environment.firebaseConfig
 
@@ -40,7 +42,8 @@ const configFirebase = environment.firebaseConfig
     ReadVisitasComponent,
     CreateVisitaComponent,
     StartComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ const configFirebase = environment.firebaseConfig
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatInputModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
