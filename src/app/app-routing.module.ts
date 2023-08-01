@@ -6,6 +6,7 @@ import { CreateVisitaComponent } from './visitas/create-visita/create-visita.com
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { StartComponent } from './components/start/start.component';
 import { LoginComponent } from './components/login/login.component';
+import { UpdateVisitaComponent } from './visitas/update-visita/update-visita.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     component: HomeComponent, 
     children: [
       { path: 'read', component: ReadVisitasComponent},
-      { path: 'create', component: CreateVisitaComponent}
+      { path: 'create', component: CreateVisitaComponent},
+      { path: 'read/:id', component: UpdateVisitaComponent}
     ]
   },
   {

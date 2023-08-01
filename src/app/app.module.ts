@@ -25,13 +25,27 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
+import {AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR} from "@angular/fire/compat/auth";
+
 import { ReadVisitasComponent } from './visitas/read-visitas/read-visitas.component';
 import { CreateVisitaComponent } from './visitas/create-visita/create-visita.component';
 import { StartComponent } from './components/start/start.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { LoginComponent } from './components/login/login.component';
 
-const configFirebase = environment.firebaseConfig
+const configFirebase = environment.firebase
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    
+    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+  ],
+  tosUrl: '<your-tos-link>',
+  privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
+};
 
 
 
@@ -60,10 +74,12 @@ const configFirebase = environment.firebaseConfig
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(configFirebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     ],
   providers: [],
   bootstrap: [AppComponent]
